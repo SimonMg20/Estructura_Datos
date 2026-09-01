@@ -10,8 +10,8 @@ Resolver el problema de almacenamiento y lectura de una matriz de **100.000 × 1
 
 La matriz contiene únicamente valores `0` y `1`, por lo que se utiliza un **bitmap**, almacenando cada valor como un bit en lugar de utilizar caracteres.
 
-* La matriz tiene **100.000 filas**.
-* Cada fila se representa mediante un bitmap de **100.000 bits**.
+* La matriz tiene 100.000 filas.
+* Cada fila se representa mediante un bitmap de 100.000 bits.
 * Cada bitmap ocupa **12.500 bytes**.
 * Los **100.000 bitmaps** se almacenan consecutivamente en un único archivo binario llamado `matriz.bitmap`.
 
@@ -19,13 +19,13 @@ La matriz contiene únicamente valores `0` y `1`, por lo que se utiliza un **bit
 
 ## Archivos
 
-### `matriz_con_bitmap.py`
+### -matriz_con_bitmap.py
 
 Crea el archivo `matriz.bitmap`. Genera un bitmap completamente inactivo, con todos sus bits en `0`, y lo escribe 100.000 veces, representando las 100.000 filas.
 
-### `matriz_lector.py`
+### -matriz_lector.py
 
-Lee los primeros **12.500 bytes** del archivo, correspondientes a la primera fila, y permite verificar su cantidad de bytes y bits. 
+Lee los primeros 12.500 bytes del archivo, correspondientes a la primera fila, y permite verificar su cantidad de bytes y bits. 
 
 ## Verificación
 
