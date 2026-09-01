@@ -31,10 +31,10 @@ Lee los primeros **12.500 bytes** del archivo, correspondientes a la primera fil
 
 Al ejecutar el lector se debe obtener:
 
-```text
+
 Bytes de la primera fila: 12500
 Ceros de la primera fila: 100000
-```
+
 
 Esto confirma que la primera fila contiene **100.000 bits**, todos en `0`.
 
