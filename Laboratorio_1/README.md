@@ -2,9 +2,6 @@
 
 **Estudiante:** Simon Montoya
 
-## Objetivo
-
-Resolver el problema de almacenamiento y lectura de una matriz de **100.000 × 100.000**, optimizando el consumo de RAM, la escritura en disco y la manipulación de los datos.
 
 ## Solución
 
@@ -14,7 +11,6 @@ La matriz contiene únicamente valores `0` y `1`, por lo que se utiliza un **bit
 * Cada fila se representa mediante un bitmap de 100.000 bits.
 * Cada bitmap ocupa **12.500 bytes**.
 * Los **100.000 bitmaps** se almacenan consecutivamente en un único archivo binario llamado `matriz.bitmap`.
-
 
 
 ## Archivos
