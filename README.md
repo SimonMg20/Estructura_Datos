@@ -6,3 +6,4 @@ Repositorio para guardar los laboratorios de Estructura de Datos y Lab
 
 ## Laboratorios
 - Laboratorio_1 : Matriz 100.000 x 100.000
+- Laboratorio_2 : Arbol de Merkle

@@ -1,5 +1,7 @@
 # Laboratorio 2 – Árbol de Merkle
 
+### Codigo realizado con la ayuda de [ClaudeAI](https://claude.ai)
+
 **Estudiante:** Simon Montoya
 
 ## Objetivo
