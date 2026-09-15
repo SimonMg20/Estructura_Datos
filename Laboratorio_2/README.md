@@ -58,11 +58,11 @@ Después se presenta un menú con las siguientes opciones:
 
 ## Pruebas
 
-![Verificación válida](capturas/Arbol.png)
+![Verificación válida](Capturas/Arbol.png)
 
-![Arbol modificado](capturas/ArbolModificado.png)
+![Arbol modificado](Capturas/ArbolModificado.png)
 
-![Prueba de inclusion](capturas/pruebaInclusion.png)
+![Prueba de inclusion](Capturas/pruebaInclusion.png)
 
 
 
