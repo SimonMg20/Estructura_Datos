@@ -62,7 +62,7 @@ Después se presenta un menú con las siguientes opciones:
 
 ![Arbol modificado](Capturas/ArbolModificado.png)
 
-![Prueba de inclusion](Capturas/pruebaInclusion.png)
+![Prueba de inclusion](Capturas/PruebaInclusion.png)
 
 
 
