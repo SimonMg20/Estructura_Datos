@@ -7,7 +7,7 @@
 ### 1. Objetivos del Experimento
 * **Medición de Tiempos Exponenciales:** Evaluar experimentalmente el tiempo de ejecución de las operaciones de **Inserción**, **Búsqueda** y **Listado Ordenado** para tamaños de entrada $N \in \{100, 500, 1000, 2500, 5000, 10000\}$.
 ---
-* **Validación Teórica vs Experimental:** Contrastar si los tiempos reales se ajustan a las complejidades teóricas esperadas ($\mathcal{O}(1)$, $\mathcal{O}(\log N)$, $\mathcal{O}(N)$, $\mathcal{O}(N \log N)$ y $\mathcal{O}(N^2)$).
+**Validación Teórica vs Experimental:** Contrastar si los tiempos reales se ajustan a las complejidades teóricas esperadas ($O(1)$, $O(\log N)$, $O(N)$, $O(N \log N)$ y $O(N^2)$).
 
 ## 2. Entorno Experimental
 
@@ -56,22 +56,27 @@ Se seleccionaron 6 tamaños de muestra representativos para observar la evoluci�
 ---
 ## 4. Estructura del Proyecto e Instrucciones de Ejecución
 
-### 4.1 Organización de Archivos
-El proyecto está estructurado de manera modular para garantizar la independencia entre la generación de datos, la toma de tiempos y la visualización:
+### 4.1 Organización de Archivos y Destino de Resultados
+Los datos procesados y visualizaciones resultantes se almacenan automáticamente en la raíz del proyecto y en subcarpetas dedicadas:
 
-
+```text
 Laboratorio_3/
 ├── estructuras.py          # Implementación de Lista, ABB y Árbol B+
 ├── generador.py            # Generación sintética de registros de estudiantes
-├── medidor_tiempos.py      # Script principal del benchmark y exportación de CSVs
-├── graficar.py             # Script de procesamiento visual y generación de PNGs
-├── main.py                 # Orquestador principal de todo el flujo
-├── resultados_insercion.csv# Tiempos recolectados para Inserción
-├── resultados_busqueda.csv # Tiempos recolectados para Búsqueda
-├── resultados_listado.csv  # Tiempos recolectados para Listado Ordenado
-└── graficas/               # Carpetas de imágenes generadas
-    ├── lineal/             # Visualizaciones en escala lineal tradicional
-    └── loglog/             # Visualizaciones en escala logarítmica (Log-Log)
+├── medidor_tiempos.py      # Script del benchmark (Genera los CSVs)
+├── graficar.py             # Generador de gráficas a partir de los CSVs
+├── main.py                 # Orquestador del flujo completo
+│
+├── [Ruta de Salida Datos]
+├── resultados_insercion.csv# Datos de tiempos para Inserción
+├── resultados_busqueda.csv # Datos de tiempos para Búsqueda
+├── resultados_listado.csv  # Datos de tiempos para Listado Ordenado
+│
+└── [Ruta de Salida Imágenes]
+    └── graficas/           
+        ├── lineal/         # Visualizaciones en escala lineal tradicional
+        └── loglog/         # Visualizaciones en escala logarítmica (Log-Log)
+```
 ---
 ## 5. Análisis de Resultados y Conclusiones
 
