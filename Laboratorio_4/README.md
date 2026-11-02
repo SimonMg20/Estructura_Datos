@@ -169,4 +169,4 @@ Uso de los modelos de Inteligencia Artificial **ChatGPT (OpenAI)** y **Claude (A
   - Asistencia en la interpretación de resultados y métricas experimentales.
   - Apoyo en la redacción y estructuración de la documentación del proyecto.
 
-El diseño, la implementación, las pruebas y la revisión de los resultados forman parte del trabajo académico desarrollado por el estudiante.
+
