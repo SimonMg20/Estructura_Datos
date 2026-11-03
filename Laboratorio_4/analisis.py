@@ -17,7 +17,7 @@ RADIO = gd.RADIO
 CARPETA = "graficas"
 
 
-def _memoria_arbol(puntos):
+def memoria_arbol(puntos):
     gc.collect()
     tracemalloc.start()
     arbol = qt.QuadTree(puntos, gd.LIMITES)
@@ -27,7 +27,7 @@ def _memoria_arbol(puntos):
     return actual
 
 
-def _medir_consultas(consultas, funcion_qt, funcion_fb):
+def medir_consultas(consultas, funcion_qt, funcion_fb):
     inicio = time.perf_counter()
     distancias_qt = 0
     for consulta in consultas:
@@ -57,14 +57,14 @@ def _medir(n, semilla):
     return {
         "n": n,
         "nodos": arbol.contar_nodos(),
-        "memoria": _memoria_arbol(puntos),
+        "memoria": memoria_arbol(puntos),
         "tiempo_construccion": tiempo_construccion,
-        "rango": _medir_consultas(
+        "rango": medir_consultas(
             consultas,
             lambda c: arbol.rango(c, RADIO),
             lambda c: fb.rango(puntos, c, RADIO),
         ),
-        "vecino": _medir_consultas(
+        "vecino": medir_consultas(
             consultas,
             arbol.vecino_mas_cercano,
             lambda c: fb.vecino_mas_cercano(puntos, c),

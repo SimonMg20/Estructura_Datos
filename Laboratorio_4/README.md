@@ -141,6 +141,7 @@ Las siguientes gráficas permiten observar el comportamiento del Quadtree y comp
 ###  División Espacial del Quadtree
 
 ![Visualización del Quadtree](graficas/visualizacion.png)
+![Visualización del Quadtree Zoom](graficas/visualizacion_zoom.png)
 
 ###  Crecimiento de la Estructura
 

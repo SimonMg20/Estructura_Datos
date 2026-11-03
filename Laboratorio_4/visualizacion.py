@@ -1,7 +1,7 @@
 """Visualización del quadtree y de una consulta."""
-
+import os
 import matplotlib.pyplot as plt
-from matplotlib.collections import LineCollection
+from matplotlib.collections import LineCollection, PathCollection
 from matplotlib.patches import Circle
 
 import generador_datos as gd
@@ -60,11 +60,42 @@ def dibujar(puntos, arbol, centro, radio=gd.RADIO, ax=None):
     return ax
 
 
+def dibujar_zoom(puntos, arbol, centro, radio=gd.RADIO, margen=1000.0):
+    """Versión ampliada de dibujar: recorta la vista alrededor de la consulta.
+
+    No modifica dibujar; usa su resultado y ajusta límites, tamaños y título.
+    """
+    ax = dibujar(puntos, arbol, centro, radio)
+    cx, cy = centro
+    ax.set_xlim(cx - margen, cx + margen)
+    ax.set_ylim(cy - margen, cy + margen)
+
+    for coleccion in ax.collections:
+        if isinstance(coleccion, PathCollection):
+            coleccion.set_sizes([s * 3 for s in coleccion.get_sizes()])
+        elif isinstance(coleccion, LineCollection):
+            coleccion.set_linewidths(1.0)
+
+    ax.set_title(f"Zoom ±{margen:.0f} m: rango de {radio:.0f} m y vecino más cercano")
+    return ax
+
+
+
 def main():
-    """Genera datos, construye el árbol y muestra la figura."""
+    """Genera datos, construye el árbol y guarda las figuras."""
+    os.makedirs("graficas", exist_ok=True)
     puntos = gd.generar_puntos(10_000)
     arbol = qt.QuadTree(puntos, gd.LIMITES)
-    dibujar(puntos, arbol, (5000.0, 5000.0), gd.RADIO)
+
+    centro = (5000.0, 5000.0)
+    radio = gd.RADIO
+
+    ax = dibujar(puntos, arbol, centro, radio)
+    ax.figure.savefig("graficas/visualizacion.png", dpi=150, bbox_inches="tight")
+
+    ax_zoom = dibujar_zoom(puntos, arbol, centro, radio, margen=1000)
+    ax_zoom.figure.savefig("graficas/visualizacion_zoom.png", dpi=150, bbox_inches="tight")
+
     plt.show()
 
 
